@@ -17,7 +17,7 @@ Usual Windows commands can be launched from the interactive shell the script pro
 ```
 >>> dir c:
 ```
-A post-exploitation tool like mimikatz can also be uploaded and run to extract passwords from the target:
+A post-exploitation tool like mimikatz can also be uploaded and ran to extract passwords from the target:
 
 ```
 >>> upload ../mimikatz.exe
@@ -48,7 +48,7 @@ This project was initially presented at the 2014 Hackito Ergo Sum conference by 
 - <a href="http://2014.hackitoergosum.org/slides/day1_WMI_Shell_Andrei_Dumitrescu.pdf" target="_blank">http://2014.hackitoergosum.org/slides/day1_WMI_Shell_Andrei_Dumitrescu.pdf</a>
 - <a href="https://speakerdeck.com/hackitoergosum/hes2014-wmi-shell-a-new-way-to-get-shells-on-remote-windows-machines-using-only-the-wmi-service-by-andrei-dumitrescu" target="_blank">https://speakerdeck.com/hackitoergosum/hes2014-wmi-shell-a-new-way-to-get-shells-on-remote-windows-machines-using-only-the-wmi-service-by-andrei-dumitrescu</a>
 
-### Project description:
+### Description:
 
 The Windows Management Instrumentation (WMI) technology is included by default in all versions of Windows since Windows Millenium. The WMI technology is used by Windows administrators to get a variety of information concerning the target machine (like user account information, the list of running processes etc.) and to create/kill processes on the machine.
 
