@@ -7,7 +7,7 @@ Remote WMI access must be configured on the target. No SMB services are needed. 
 
 ## Usage
 
-Launch the script on Kali Linux with either the cleartext password or the password hash of an administrator account on the target Windows machine:   
+Launch the script on Kali Linux 32-bit with either the cleartext password or the password hash of an administrator account on the target Windows machine:   
 ```
 python -O wmi-shell.py <USERNAME> <PASSWORD> <TARGET_IP>
 python -O wmi-shell.py <USERNAME> <LM:NTLM> <TARGET_IP>	
@@ -26,20 +26,22 @@ A post-exploitation tool like mimikatz can also be uploaded and ran to extract p
 
 ## Requirements
 
-Kali Linux 32-bit and 64-bit with Pass the Hash toolkit (installed by default). 
+Kali Linux 32-bit with Pass the Hash toolkit (installed by default). 
+
+The necessary pth-wmis tool does not work on Kali Linux 64-bit, so it's only 32-bit systems for now.
 
 To make the script run from other systems, you must download and install the PTH toolkit and some old libraries needed by the wmis and wmic tools.
 
-Example for a 64-bit Debian:
+Example for a 32-bit Debian:
 ```bash
 git clone https://github.com/byt3bl33d3r/pth-toolkit
 sudo apt install multiarch-support
-wget http://ftp.de.debian.org/debian/pool/main/libt/libtasn1-3/libtasn1-3_2.13-2+deb7u2_amd64.deb
-wget http://ftp.de.debian.org/debian/pool/main/g/gnutls26/libgnutls26_2.12.20-8+deb7u5_amd64.deb
-wget http://ftp.de.debian.org/debian/pool/main/libg/libgcrypt11/libgcrypt11_1.5.0-5+deb7u4_amd64.deb
-dpkg -i libgcrypt11_1.5.0-5+deb7u4_amd64.deb
-dpkg -i libtasn1-3_2.13-2+deb7u2_amd64.deb
-dpkg -i libgnutls26_2.12.20-8+deb7u5_amd64.deb
+wget http://ftp.de.debian.org/debian/pool/main/libt/libtasn1-3/libtasn1-3_2.13-2+deb7u2_i386.deb
+wget http://ftp.de.debian.org/debian/pool/main/g/gnutls26/libgnutls26_2.12.20-8+deb7u5_i386.deb
+wget http://ftp.de.debian.org/debian/pool/main/libg/libgcrypt11/libgcrypt11_1.5.0-5+deb7u4_i386.deb
+dpkg -i libgcrypt11_1.5.0-5+deb7u4_i386.deb
+dpkg -i libtasn1-3_2.13-2+deb7u2_i386.deb
+dpkg -i libgnutls26_2.12.20-8+deb7u5_i386.deb
 ```
 
 ## Project details
